@@ -1,0 +1,126 @@
+ <section id="tabs">
+	<div  style="margin-top: -60px;">
+		<!--<p style="font-size: 25px;">Categories</p>-->
+		<div class="row">
+			<div class="col-xl-12">
+				<nav style="background: darkslategray; width: 100%;">
+          <div class="col-sm-8" style="height: 57px">
+              <div style="height:10px;width: 10px;">
+                <img height="50px" style="margin-top: 10px;" src="./../../assets/icon-glasses-white.png">
+              </div>
+              <div class="input-group py-2 px-3" style="margin-left: 54%">
+              <input type="text" class="form-control round-input" placeholder="Search" (keypress)="keyDown($event,SearchKey)" #SearchKey>
+              <div class="input-group-append">
+                 <button class="btn btn-success round-input" type="button" (click)="searchBatch(SearchKey)">  <i class="fa fa-search" aria-hidden="true"></i> </button>
+                 <!--<a class="btn-outline-primary" (click)="searchBatch(SearchKey)"><img style="width: 40px; height: 40px;" src="../../assets/Gnome_maps_icon.svg.png"></a>-->
+                 <div *ngIf="step === 1">
+                 <button class="btn btn-primary btn-block" type="button" [routerLink]="['/tool']"><i class="fa fa-pencil" aria-hidden="true"></i> Tools </button>
+                 </div>
+                 <div *ngIf="step === 2">
+                 <button class="btn btn-primary btn-block" type="button" (click)="change(1)"><i class="fa fa-home" aria-hidden="true"></i> Home </button>
+                </div>
+              </div>
+              </div>
+          </div>
+          <div class="col-md-12 " *ngIf="step === 1">
+					<div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist" style="height:40px">
+						<a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true" (click)="setCategory('talk.home')"><p>Home</p></a>
+						<a class="nav-item nav-link " id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true" (click)="setCategory('talk.politics.srilanka')"><p>Politics</p></a>
+						<a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false" (click)="setCategory('cri.criminal.guns')"><p>Crime</p></a>
+            <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false" (click)="setCategory('rec.sport.cricket')"><p>Sports</p></a>
+						<!--<a class="nav-item nav-link" id="nav-about-tab" data-toggle="tab" href="#nav-about" role="tab" aria-controls="nav-about" aria-selected="false"><p>World</p></a>-->
+						<a class="nav-item nav-link" id="nav-about-tab" data-toggle="tab" href="#nav-about" role="tab" aria-controls="nav-about" aria-selected="false" (click)="setCategory('edu.education')"><p>Education</p></a>
+						<!--<a class="nav-item nav-link" id="nav-about-tab" data-toggle="tab" href="#nav-about" role="tab" aria-controls="nav-about" aria-selected="false"><p>health</p></a>-->
+						<a class="nav-item nav-link" id="nav-about-tab" data-toggle="tab" href="#nav-about" role="tab" aria-controls="nav-about" aria-selected="false" (click)="setCategory('talk.tech')"><p>Technology</p></a>
+					</div>
+          </div>
+
+				</nav>
+
+
+				<!--<div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent" >-->
+				<!--</div>-->
+        <div class="spinner" *ngIf="load">
+           <div class="rect1"></div>
+          <div class="rect2"></div>
+          <div class="rect3"></div>
+          <div class="rect4"></div>
+          <div class="rect5"></div>
+        </div>
+
+        <div class="container" *ngIf="step === 1" >
+          {{Error}}
+        <div class="row">
+            <div class="col-md-8 col-md-8 col-lg-4 mt-4" *ngFor="let article of catArticles">
+                <div class="card" >
+                    <div *ngIf="article['media-link'].toString().split('.')[1] !== undefined ">
+                    <img style="height: 181px; width: 100%;" class="card-img-top center" [src]="article['media-link']">
+                    </div>
+                    <div *ngIf="article['media-link'].toString().split('.')[1] === undefined ">
+                    <iframe width="420" height="315" [src]="article['media-link']"></iframe>
+                    </div>
+                    <div class="card-block">
+                      <div style="height: 25px;">
+                        <h4 style="color: darkslategray; font-size: 13px;" class="card-title">{{article.subject}}</h4>
+                       </div>
+                      <div class="meta">
+                           <hr>
+                        </div>
+                        <div class="card-text">
+                           {{article.content}}
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="row" >
+                          <span *ngFor="let reflink of article.ref">
+                            <a href="{{reflink['link']}}" class="badge stagecss">{{reflink['source'] }}</a>
+                          </span>
+                        </div>
+                        <div class="row">
+                          <span class="float-right " *ngIf="article.media_ethics['violations'] === true"> <span style="color: red;" class="fa fa-flag"></span>{{article['media_ethics']['reason']}}</span>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+ </div>
+        <div *ngIf="step === 2">
+             <h1 class="text-center py-5" style="color: darkslategrey">Peregrine Tools</h1>
+
+
+
+
+
+        </div>
+
+		</div>
+	</div>
+    </div>
+</section>
+
+
+
+<!--<div class="modal" id="view" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">-->
+        <!--<div class="modal-dialog">-->
+            <!--<div class="modal-content">-->
+                <!--<div class="modal-header" style="background: limegreen; align-content: center;">-->
+                  <!--<h5 class="modal-title text-center">Image</h5>-->
+                   <!--<button type="button"  class="fa fa-close close" data-dismiss="modal" aria-hidden="true"></button>-->
+                 <!--</div>-->
+                <!--<div class="modal-body">-->
+                    <!--<div class="text-centerS">-->
+                      <!--<div class="row">-->
+                        <!--<div class="col-md-12 text-center">-->
+                            <!--<img style="height: 181px; width: 100%;" class="card-img-top center" [src]="gArticle['media-link']">-->
+                            <!--<h3 class="media-heading">{{}} <br/></h3>-->
+                        <!--</div>-->
+                      <!---->
+                      <!--</div>-->
+                    <!--</div>-->
+                    <!--<hr>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+<!--</div>-->

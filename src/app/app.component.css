@@ -1,0 +1,18 @@
+.backgrnd{
+    /*background-image: url("src/assets/bg.png");*/
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    min-height: 1000px;
+    background: #eaeaea;
+    max-width: available;
+}
+.topnav{
+background: rgb(251,245,245);
+background: linear-gradient(90deg, rgba(251,245,245,1) 60%, rgba(47,79,79,0.8071603641456583) 84%, rgba(71,70,70,1) 100%);/* ie6-9 */
+}
+.round-input {
+border-radius: 20px;
+padding: 0.375rem 1rem;
+ }
