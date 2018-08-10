@@ -78,7 +78,7 @@ export class ToolsComponent implements OnInit {
    const oDOM = oParser.parseFromString(this.summarizeContent, "text/html");
    const text = oDOM.body.innerText;
    this.summarized ='';
-     this.apiService.post('http://localhost:5000/api/summarizeArticles',{content:text} )
+     this.apiService.post('https://obscure-citadel-80764.herokuapp.com/api/summarizeArticles',{content:text} )
      .subscribe((data) => {
        console.log(data._body);
        this.summarized = data._body.toString().split('"').join();
