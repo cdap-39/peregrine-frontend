@@ -77,14 +77,15 @@ export class ApiService {
   }
 
   // // Perform a PUT Request
-  // put(path: string, body: Object = {}): Observable<any> {
-  //   return this.http.put(
-  //     `${this.api_url}${path}`,
-  //     body,
-  //     { headers: this.setHeaders() }
-  //   ).catch(this.formatErrors)
-  //     .map((res: Response) => res.json());
-  // }
+  put(path: string, body: Object = {}): Observable<any> {
+    return this.http.put(
+      `${this.api_url}${path}`,
+      body,
+      {headers: this.setHeaders()}
+    ).pipe(
+      map((res) => res) // or any other operator
+    );
+  }
   // pushFileToStorage(file: File): Observable<any> {
   //   const formdata: FormData = new FormData();
   //   formdata.append('file', file);

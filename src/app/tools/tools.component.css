@@ -195,7 +195,8 @@
       /*margin-left: 66px;*/
       position: absolute;
       background: white;
-      top:152px
+      top:152px;
+      height: 1000px;
 
 }
 .welcome {
@@ -303,7 +304,7 @@
 
 .wCount{
   position: absolute;
-  right: 28px;
+  right: 45px;
     top: 1px;
     height: 28px;
     width: 69px;
@@ -320,10 +321,9 @@
 }
 .save{
   position: absolute;
-  right: 24px;
+  right: 45px;
   top: 34px;
   height: 40px;
-  width: 100px;
   font-size: 15px;
 }
 .includes{
@@ -351,7 +351,7 @@ ul.mail-list{
     padding:0;
     margin:0;
     list-style:none;
-    margin-top:10px;
+    margin-top:0px;
 }
 ul.mail-list li a{
     display:block;
@@ -381,4 +381,17 @@ ul.mail-list li span.mail-message-preview{
 }
 .mail-search{
     border-bottom-color:#7FBCC9!important;
+}
+.msg{
+  background: snow;
+  border-top:  0.5px solid darkcyan;
+  border-bottom:  0.5px solid darkcyan;
+}
+.card-text{
+  height: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 4;
+  display: -webkit-box;
+  -webkit-box-orient: vertical
 }

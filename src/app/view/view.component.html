@@ -68,7 +68,7 @@
 
         </div>
         <div class="row">
-            <div class="col-md-8 col-md-8 col-lg-4 mt-4" *ngFor="let article of viewArticles">
+            <div class="col-md-8 col-md-8 col-lg-4 mt-4" *ngFor="let article of viewArticles.reverse()">
                 <div class="card" >
                     <div *ngIf=" article['video-link'] === undefined &&  article['media-link'].toString().split('.')[1] !== undefined ">
                     <img style="height: 181px; width: 100%;" class="card-img-top center" [src]="article['media-link']">
