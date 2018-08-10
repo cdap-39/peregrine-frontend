@@ -52,16 +52,16 @@
         <div class="row">
             {{Error}}
 
-           <span class="col-xl-12" *ngIf="!load && category === 'talk.politics.srilanka' " style="background: #0000ed">
+           <span class="col-xl-12 sub-nav" *ngIf="!load && category === 'talk.politics.srilanka' ">
              <span *ngFor="let cat of polCategories"><a href="javascript:0" (click)="subSearch(cat)" style="font-size: 15px;font-weight:lighter;color: white; background: blueviolet" class="badge" >{{cat}}</a> <span> </span></span>
            </span>
-           <span class="col-xl-12" *ngIf="!load && category === 'cri.criminal.guns' " style="background: #0000ed">
+           <span class="col-xl-12 sub-nav" *ngIf="!load && category === 'cri.criminal.guns' ">
              <span *ngFor="let cat of crimeCategories"><a href="javascript:0" (click)="subSearch(cat)" style="font-size: 15px;font-weight:lighter;color: white; background: blueviolet" class="badge" >{{cat}}</a> <span> </span></span>
            </span>
-           <span class="col-xl-12" *ngIf="!load && category === 'rec.sport.cricket' " style="background: #0000ed">
+           <span class="col-xl-12 sub-nav" *ngIf="!load && category === 'rec.sport.cricket' ">
              <span *ngFor="let cat of sportsCategories"><a href="javascript:0" (click)="subSearch(cat)" style="font-size: 15px;font-weight:lighter;color: white; background: blueviolet" class="badge" >{{cat}}</a> <span> </span></span>
            </span>
-           <span class="col-xl-12" *ngIf="!load && category === 'edu.education' " style="background: #0000ed">
+           <span class="col-xl-12 sub-nav" *ngIf="!load && category === 'edu.education' ">
              <span *ngFor="let cat of eduCategories"><a href="javascript:0" (click)="subSearch(cat)" style="font-size: 15px;font-weight:lighter;color: white; background: blueviolet" class="badge" >{{cat}}</a> <span> </span></span>
            </span>
 

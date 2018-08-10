@@ -224,5 +224,12 @@ padding: 0.375rem 1rem;
   }
 }
 
+.sub-nav {
+    padding-top: 10px;
+}
+
+.sub-nav > span {
+    padding: 5px;
+}
 
 
