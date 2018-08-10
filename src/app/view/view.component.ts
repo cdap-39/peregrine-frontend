@@ -21,7 +21,7 @@ export class ViewComponent implements OnInit {
     this.fuzzy = require('fuzzy');
   }
 
-  public polCategories = ['All', 'Prasident', 'Prime Minister', 'Parliament', 'Sri Lanka'];
+  public polCategories = ['All', 'President', 'Prime Minister', 'Parliament', 'Sri Lanka'];
   public sportsCategories = ['All', 'Cricket', 'Foot Ball', 'Olympic'];
   public crimeCategories = ['All', 'Gun', 'CID'];
   public eduCategories = ['All', 'Technology', 'Exams'];
