@@ -67,7 +67,7 @@ export class ViewComponent implements OnInit {
 
           });
         }
-        this.viewArticles = this.catArticles;
+        this.viewArticles = this.catArticles.reverse();
       }, (err) => {
         console.log(err);
         this.Error = 'Server Error ! try again later.';

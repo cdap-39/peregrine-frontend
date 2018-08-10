@@ -151,8 +151,8 @@ export class ToolsComponent implements OnInit {
     const text = oDOM.body.innerText;
     this.scanResults = [];
     const violate = [
-      {"content":"hello", "reason":"hello is there"},
-      {"content":"bye", "reason":"bye is there"},
+      {"content":"Vidya", "reason":"Disclosing personal details of victims of rape"},
+      {"content":"Pukudi", "reason":"Disclosing personal details of victims"},
     ];
     violate.forEach(element => {
       if( text.indexOf(element.content) >= 0){
