@@ -24,8 +24,6 @@
     </div>
   </div>
 
-
-
 <div class="row">
 
   <div class="col-sm-4">
@@ -73,6 +71,13 @@
                 </li>
             </a>
 
+            <a (click)="change(7)">
+                <li class="item-menu">
+                    <span class="fa fa-eye"></span>
+                    <span class="menu">Review</span>
+                </li>
+            </a>
+
             <a (click)="change(6)">
                 <li class="item-menu">
                     <span class="fa fa-credit-card"></span>
@@ -80,12 +85,15 @@
                 </li>
             </a>
 
+
+
         </ul>
     </div> <!-- end left -->
     </div>
 	</div>
 
   </div>
+
 <div class="container-fluid">
 
 
@@ -357,6 +365,50 @@
 
   </div>
 
+  <div class="edit col-md-12" *ngIf="step === 7 ">
+
+    <div class="col-md-12" style="height: 87px;">
+    <div class="jumbotron welcome p-1" style="margin-left: 57px;">
+    <span><h3 class="font-weight-bold">Review <i class="fa fa-envelope-square"></i></h3></span>
+     <p class="lead text-justify">You can send you article to someone to review.</p>
+    </div>
+    </div>
+    <hr>
+    <div style="min-height: 500px;margin-left: 57px;">
+
+       <ul class="nav nav-tabs">
+        <li class="nav-link" [ngClass]="{'active' : tab === true}" (click)="tab = true " ><a>Inbox</a></li>
+        <li class="nav-link" [ngClass]="{'active' : tab === false}" (click)="tab = false" ><a>Sent</a> </li>
+       </ul>
+       <br>
+       <div *ngIf="tab === true">
+
+          <hr>
+          <ul class="mail-list">
+                       <li class="row" >
+                           <a href="">
+                             <div class="col-md-8 pull-left">
+                               <span class="mail-sender">You Tube</span>
+                               <span class="mail-subject">New subscribers!</span>
+                               <span class="mail-message-preview">You have ten more subscriptions click her...</span>
+                             </div>
+                             <div class="col-md-4 pull-right">
+                               <button class="btn btn-sm btn-success"></button>
+                             </div>
+                           </a>
+                       </li>
+          </ul>
+
+       </div>
+       <div *ngIf="tab === false">
+
+       </div>
+
+
+    </div>
+
+  </div>
+
 
     </div>
    </div>
@@ -364,6 +416,23 @@
 
 
  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
  // modal

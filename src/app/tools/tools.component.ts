@@ -20,7 +20,8 @@ export class ToolsComponent implements OnInit {
   public tmpempty = false;
   public popState = false;
   public loading = '';
-  private message: string ='';
+  public tab = true;
+  private message ='';
   public templates = [];
   public step = 1;
   latestRelease: any = {};
